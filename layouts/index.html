@@ -1,0 +1,73 @@
+<!-- This file is the homepage of the website. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+      This section just sets up some metadata for the website.
+
+      It probably does not need to be changed.
+    -->
+    <meta charset="utf-8">
+    <base href="{{ .Site.BaseUrl }}">
+    <title>{{ .Site.Title }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+    {{ template "chrome/head_includes.html" . }}
+</head>
+  <body class="theme-base-08" lang="en">
+
+  {{ template "chrome/sidebar.html" . }}
+
+  <!-- See /layouts/indexes/category.html for explanation of this section -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Home</a>
+          </h3>
+        </div>
+      </div>
+
+      <!--
+        This section contains the content of our home page.
+
+        I have broken it into three main sections:
+          (1) about the blog
+          (2) about me
+          (3) Recent posts
+
+        The first two sections are pretty self explanatory.
+
+        In the recent posts section we ask Hugo to use the template found in
+        /layouts/posts/summary.html to show a summary of the 10 most recent
+        posts we have made.
+      -->
+      <div class="container content">
+        <h1>徐医生的博客</h1>
+
+        <p class="lead"> 欢迎来到我的博客！ </p>
+
+        <p>这个简单的博客修改自<a href="https://github.com/spencerlyon2/hugo_gh_blog">hugo_gh_blog</a>这个博客模板，大家也可以基于<a href="https://github.com/eason-xu/eason-blog-hugo">我的模板</a>进行修改。</p>
+
+        <!-- About me subsection -->
+        <h2>About me</h2>
+
+        <p>一个码农。</p>
+
+        <!-- Recent Posts section -->
+        <h1 class="post-title">Recent Posts</h1>
+          <section id="main">
+            <ul id="list">
+              {{ range first 10 .Data.Pages }}
+              {{ .Render "summary"}}
+              {{ end }}
+            </ul>
+          </section>
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+{{ template "chrome/footer.html" }}

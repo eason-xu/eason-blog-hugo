@@ -1,0 +1,3 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:eason-xu/eason-xu.github.io.git
