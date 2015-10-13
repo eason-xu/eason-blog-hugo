@@ -20,7 +20,7 @@ keywords:
 4. `git clone <<your-project>-hugo-url> && cd <your-project>-hugo`
 5. 本地调试：`hugo server --watch`
 6. 调试无误后，ctrl+c结束调试。`rm -rf public`
-7. `git submodule add git@github.com:<username>/<username>.github.io.git public`
+7. `git submodule add git@github.com:<username>/<username>.github.io.git public`。如果不是第一次提交，则使用`git submodule update --init --recursive`。
 8. 执行`deploy.sh "Your optional commit message"`
 
 稍等片刻，就可以在<http://username.github.io/>看到你的博客了。
