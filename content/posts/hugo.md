@@ -25,6 +25,6 @@ keywords:
 
 稍等片刻，就可以在<http://username.github.io/>看到你的博客了。
 
-最后，也不要忘记了提交hugo博客的修改。**注意，必须先提交public的内容，再提交hugo的内容**
+最后，也不要忘记了提交hugo博客的修改。**注意，必须先提交public的内容，再提交hugo的内容**。
 
 [Installing Hugo]: https://gohugo.io/overview/installing/
